@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Acm | TCET</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+        .body1 {
+            font-size: 16px;
+            color: #404040;
+            font-family: Montserrat, sans-serif;
+            background-image: linear-gradient(to bottom right, #ff9eaa 0% 65%, #e860ff 95% 100%);
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 2rem 0;
+            display: grid;
+            place-items: center;
+            box-sizing: border-box;
+        }
+        
+        .card {
+            background-color: #fff;
+            max-width: 360px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius: 2rem;
+            box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.5);
+            width: 50em;
+        }
+        
+        .card .banner {
+            background-image: url("https://images.unsplash.com/photo-1545703549-7bdb1d01b734?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 11rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        
+        .card .banner svg {
+            background-color: #fff;
+            width: 8rem;
+            height: 8rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            transform: translateY(50%);
+            transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+        
+        .card .banner svg:hover {
+            transform: translateY(50%) scale(1.3);
+        }
+        
+        .card .menu {
+            width: 100%;
+            height: 5.5rem;
+            padding: 1rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            position: relative;
+            box-sizing: border-box;
+        }
+        
+        .card .menu .opener {
+            width: 2.5rem;
+            height: 2.5rem;
+            position: relative;
+            border-radius: 50%;
+            transition: background-color 100ms ease-in-out;
+        }
+        
+        .card .menu .opener:hover {
+            background-color: #f2f2f2;
+        }
+        
+        .card .menu .opener span {
+            background-color: #404040;
+            width: 0.4rem;
+            height: 0.4rem;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 0.2rem);
+            border-radius: 50%;
+        }
+        
+        .card .menu .opener span:nth-child(1) {
+            top: 0.45rem;
+        }
+        
+        .card .menu .opener span:nth-child(2) {
+            top: 1.05rem;
+        }
+        
+        .card .menu .opener span:nth-child(3) {
+            top: 1.65rem;
+        }
+        
+        .card h2.name {
+            text-align: center;
+            padding: 0 2rem 0.5rem;
+            margin: 0;
+        }
+        
+        .card .title {
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0 2rem 1.2rem;
+        }
+        
+        .card .actions {
+            padding: 0 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            order: 99;
+        }
+        
+        .card .actions .follow-info {
+            padding: 0 0 1rem;
+            display: flex;
+        }
+        
+        .card .actions .follow-info h2 {
+            text-align: center;
+            width: 50%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .card .actions .follow-info h2 a {
+            text-decoration: none;
+            padding: 0.8rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0.8rem;
+            transition: background-color 100ms ease-in-out;
+        }
+        
+        .card .actions .follow-info h2 a span {
+            color: #1c9eff;
+            font-weight: bold;
+            transform-origin: bottom;
+            transform: scaleY(1.3);
+            transition: color 100ms ease-in-out;
+        }
+        
+        .card .actions .follow-info h2 a small {
+            color: #afafaf;
+            font-size: 0.85rem;
+            font-weight: normal;
+        }
+        
+        .card .actions .follow-info h2 a:hover {
+            background-color: #f2f2f2;
+        }
+        
+        .card .actions .follow-info h2 a:hover span {
+            color: #007ad6;
+        }
+        
+        .card .actions .follow-btn button {
+            color: inherit;
+            font: inherit;
+            font-weight: bold;
+            background-color: #ffd01a;
+            width: 100%;
+            border: none;
+            padding: 1rem;
+            outline: none;
+            box-sizing: border-box;
+            border-radius: 1.5rem/50%;
+            transition: background-color 100ms ease-in-out, transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+        
+        .card .actions .follow-btn button:hover {
+            background-color: #efb10a;
+            transform: scale(1.1);
+        }
+        
+        .card .actions .follow-btn button:active {
+            background-color: #e8a200;
+            transform: scale(1);
+        }
+        
+        .card .desc {
+            text-align: justify;
+            padding: 0 2rem 2.5rem;
+            order: 100;
+        }
+
+
+
+
+
+
+
+
+        
+    </style>
+    <!-- =======================================================
+  * Template Name: TheEvent - v4.5.0
+  * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    
+    <!-- ======= Header ======= -->
+   
+                    <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Drop Down 2</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+          </ul>
+        </li> -->
+                
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" style="background-image: url('back2.jpeg');">
+        <div  class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <h1 class="mb-4 pb-0" >ZEPHYR &nbsp;&nbsp;<span style="font-size: 2em;">2021</span> </h1>
+            <p class="mb-4 pb-0">1st Oct to 3rd Oct 2021</p>
+            
+            <a href="https://tcet.acm.org" target="blank" class="about-btn scrollto">About The ACM</a>
+        </div>
+    </section>
+    <!-- End Hero Section -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <section id="about">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>About The ACM</h2>
+                        <p>The misson of ACM TCET has always been to articulate, promote, and dissemination of research related to the field of IT.
+
+                            The chapter was founded in September 2011, which is managed by Department of Information Technology and currently has a total count of 550+ members.
+                        </p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>Where</h3>
+                        <p>Online Platform</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h3>When</h3>
+                        <p>Friday to Sunday<br>1 - 3 October</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End About Section -->
+
+
+
+
+
+
+
+
+        <!-- adding code -->
+
+        <!-- cards start -->
+        <br><br>
+        <div class="container" >
+            <div class="row" >
+                <div class="col-sm">
+                    <!-- card1  -->
+                    <div class="card">
+                        <div class="banner" style="background-image:url('assets/img/cod.jpg'); width: 100%; height: 200px;">
+                            <svg class="banner" viewBox="0 0 100 100" style="background-image: url('cod2.jpeg');object-fit: scale-down; width:35%; height: 60%">
+                              <!-- <img src="assets/img/cod1.jpeg" height="50px"; alt=""> -->
+                            </svg>
+                        </div>
+                        <div class="menu">
+                            <div class="opener"><span></span><span></span><span></span></div>
+                        </div>
+                        <h2 class="name">Call of Duty</h2>
+                        <div class="title">Mobile</div>
+
+                        <div class="" style="padding: 10px; text-align: center;">With multiplayer, 5v5 team deathmatches are at the smack dab centre of the gameplay. What makes this ridiculously fun is that everything here is fast paced — an average team match lasts for about seven minutes, so you’re not dawdling at any moment. The objective is simple — be the first to register 50 kills of your opponent team, and you win</div>
+                        <div class="actions">
+                            <div class="follow-info">
+                                <h2><a href="#"><span>&#8377 100</span><small>Entry Fees</small></a></h2>
+                                <h2><a href="#"><span>&#8377 1000</span><small>Prize Upto</small></a></h2>
+                            </div>
+                            <div class="follow-btn"><a href="https://forms.gle/d3RFzhDjdNZmKMREA" target="blank"><button>Register</button></a></div>
+                        </div>
+                    </div>
+                    
+                    <!-- card 1 end -->
+                </div>
+                <div class="col-sm">
+                    <!-- card1  -->
+                    <div class="card">
+                        <div class="banner" style="background-image:url('/Users/ankur/Desktop/ACM/download1.png'); width: 100%; height: 200px;">
+                            <svg class="banner" viewBox="0 0 100 100" style="background-image: url('tr.jpeg');object-fit: scale-down; width:35%; height: 60%">
+                              <!-- <img src="assets/img/cod1.jpeg" height="50px"; alt=""> -->
+                            </svg>
+                        </div>
+                        <div class="menu">
+                            <div class="opener"><span></span><span></span><span></span></div>
+                        </div>
+                        <h2 class="name">Technical Rush </h2>
+                        <div class="title">Zoom + other platforms</div>
+
+                        <div class="" style="padding: 10px; text-align: center;">A pace based online Hunting game which will test your proficiency in finding things through the internet. 
+                            The tasks will be related to basic technical topics pertaining to Computer/IT Domain. 
+                            Participants have to go through each task and clues to reach the end. 
+                            Various free online platforms will be used such for the same</div>
+                        <div class="actions">
+                            <div class="follow-info">
+                                <h2><a href="#"><span>Free</span><small>Entry Fees</small></a></h2>
+                                <h2><a href="#"><span>&#8377 1000</span><small>Prize Upto</small></a></h2>
+                            </div>
+                            <div class="follow-btn"><a href="https://forms.gle/AW4NpFPZzXXGocn7A" target="blank"><button>Register</button></a></div>
+                        </div>
+                    </div>
+                    
+                    <!-- card 1 end -->
+                </div>
+                
+
+
+                <div class="col-sm" >
+                    <!-- card1  -->
+                    <div class="card">
+                        <div class="banner" style="background-image:url('mern.png'); width: 100%; height: 200px;">
+                            <svg class="banner" viewBox="0 0 100 100" style="background-image: url('sp.jpeg');object-fit: scale-down; width:35%; height: 60%">
+                              <!-- <img src="assets/img/cod1.jpeg" height="50px"; alt=""> -->
+                            </svg>
+                        </div>
+                        <div class="menu">
+                            <div class="opener"><span></span><span></span><span></span></div>
+                        </div>
+                        <h2 class="name">Guided Project </h2>
+                        <div class="title">Mern Stack</div>
+
+                        <div class="" style="padding: 10px; text-align: center;">Guided Project will help participants learn a job relevant skill just in few hours through an interactive experience with step by step instructions from a subject matter expert. It will challenge to aggregate your ability to learn with minimizing the instructions given. In short, the training wheels are taken off so you have the opportunity to develop skills </div>
+                        <div class="actions">
+                            <div class="follow-info">
+                                <h2><a href="#"><span>&#8377 50</span><small>Entry Fees</small></a></h2>
+                                <h2><a href="#"><span>&#8377 1000</span><small>Prize Upto</small></a></h2>
+                            </div>
+                            <div class="follow-btn"><a href="https://forms.gle/xcNyrBEFwGTdRdWU8" target="blank"><button>Register</button></a></div>
+                        </div>
+                    </div>
+                    
+                    <!-- card 1 end -->
+                </div>
+               
+                <div class="col-sm" style="padding-top: 2em;"> 
+                    <!-- card1  -->
+                    <div class="card">
+                        <div class="banner" style="background-image:url('/Users/ankur/Desktop/ACM/coding.png'); width: 100%; height: 200px;">
+                            <svg class="banner" viewBox="0 0 100 100" style="background-image: url('cd1.jpeg');object-fit: scale-down; width:35%; height: 60%">
+                              <!-- <img src="assets/img/cod1.jpeg" height="50px"; alt=""> -->
+                            </svg>
+                        </div>
+                        <div class="menu">
+                            <div class="opener"><span></span><span></span><span></span></div>
+                        </div>
+                        <h2 class="name">Coding Maniacs </h2>
+                        <div class="title"> Codechef</div>
+
+                        <div class="" style="padding: 10px; text-align: center;">Coding Maniacs is the perfect pace-based competition to improve your coding skills and test our limits. Participants have to write code solutions to multiple problem statements with real life constraints, like time complexity, space complexity along with fix input output format. </div>
+                        <div class="actions">
+                            <div class="follow-info">
+                                <h2><a href="#"><span>Free</span><small>Entry Fees</small></a></h2>
+                                <h2><a href="#"><span>&#8377 1000</span><small>Prize Upto</small></a></h2>
+                            </div>
+                            <div class="follow-btn"><a href="https://forms.gle/PqVaiLJCPwMSgYeo6" target="blank"><button>Register</button></a></div>
+                        </div>
+                    </div>
+                    
+                    <!-- card 1 end -->
+                </div>
+                <div class="col-sm" style="padding-top: 2em";>
+                    <!-- card1  -->
+                    <div class="card">
+                        <div class="banner" style="background-image:url('/Users/ankur/Desktop/ACM/debug.png'); width: 100%; height: 200px;">
+                            <svg class="banner" viewBox="0 0 100 100" style="background-image: url('deb1.jpeg');object-fit: scale-down; width:35%; height: 60%">
+                              <!-- <img src="assets/img/cod1.jpeg" height="50px"; alt=""> -->
+                            </svg>
+                        </div>
+                        <div class="menu">
+                            <div class="opener"><span></span><span></span><span></span></div>
+                        </div>
+                        <h2 class="name">Debug the Code </h2>
+                        <div class="title">Github+Hackerrank+Other Platforms</div>
+
+                        <div class="" style="padding: 10px; text-align: center;">The Coding Contest is based on C/C++ Programming and Web Programming.The questions must be solved using this languges. Students drom any discipline may participate and it is and individual task. It will have three stages.Codes will be evaluated on the basis of correctness of code  </div>
+                        <div class="actions">
+                            <div class="follow-info">
+                                <h2><a href="#"><span>Free</span><small>Entry Fees</small></a></h2>
+                                <h2><a href="#"><span>&#8377 500</span><small>Prize Upto</small></a></h2>
+                            </div>
+                            <div class="follow-btn"><a href="https://forms.gle/NxFWQhhTKxWsbY9MA" target="=blank"><button>Register</button></a></div>
+                        </div>
+                    </div>
+                    
+                    <!-- card 1 end -->
+                </div>
+                <div class="col-sm" style="padding-top: 2em">
+                    <!-- card1  -->
+                    <div class="card">
+                        <div class="banner" style="background-image:url('/Users/ankur/Desktop/ACM/who.jpeg'); width: 100%; height: 200px;">
+                            <svg class="banner" viewBox="0 0 100 100" style="background-image: url('wh1.jpeg');object-fit: scale-down; width:35%; height: 60%">
+                              <!-- <img src="assets/img/cod1.jpeg" height="50px"; alt=""> -->
+                            </svg>
+                        </div>
+                        <div class="menu">
+                            <div class="opener"><span></span><span></span><span></span></div>
+                        </div>
+                        <h2 class="name">Whodunit 2.0 </h2>
+                        <div class="title">Whatsapp</div>
+
+                        <div class="" style="padding: 10px; text-align: center;">With multiplayer, 5v5 team deathmatches are at the smack dab centre of the gameplay. What makes this ridiculously fun is that everything here is fast paced — an average team match lasts for about seven minutes, so you’re not dawdling at any moment.</div>
+                        <div class="actions">
+                            <div class="follow-info">
+                                <h2><a href="#"><span>Free</span><small>Entry Fees</small></a></h2>
+                                <h2><a href="#"><span>&#8377 1000</span><small>Prize Upto</small></a></h2>
+                            </div>
+                            <div class="follow-btn"><a href="https://forms.gle/57PR2CUqQVQ28TFe7" target="blank"><button>Register</button></a></div>
+                        </div>
+                    </div>
+                    
+                    <!-- card 1 end -->
+                </div>
+                <div class="col-sm" style="padding-top: 2em" >
+                    <!-- card1  -->
+                    <div class="card">
+                        <div class="banner" style="background-image:url('/Users/ankur/Desktop/ACM/stu.png'); width: 100%; height: 200px;">
+                            <svg class="banner" viewBox="0 0 100 100" style="background-image: url('sgg.png');object-fit: scale-down; width:35%; height: 60%">
+                              <!-- <img src="assets/img/cod1.jpeg" height="50px"; alt=""> -->
+                            </svg>
+                        </div>
+                        <div class="menu">
+                            <div class="opener"><span></span><span></span><span></span></div>
+                        </div>
+                        <h2 class="name">Stumble Guys </h2>
+                        <div class="title">Mobile</div>
+
+                        <div class="" style="padding: 10px; text-align: center;">Stumble Guys is a massively multiplayer party knockout game with up to 32 players online intention to struggle through levels round after round of escalating chaos, until one victor remains! If you fall, just start again and run. Join the endless running fun!</div>
+                        <div class="actions">
+                            <div class="follow-info">
+                                <h2><a href="#"><span>&#8377 25</span><small>Entry Fees</small></a></h2>
+                                <h2><a href="#"><span>&#8377 1000</span><small>Prize Upto</small></a></h2>
+                            </div>
+                            <div class="follow-btn"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfk2IQ6CH9OTt6lQkEJIpw8_hMNjaj9WOA45I45xs26ja1YAg/viewform?usp=sf_link" target="blank"><button>Register</button></a></div>
+                        </div>
+                    </div>
+                    
+                    <!-- card 1 end -->
+                </div>
+                
+            </div>
+        </div>
+
+        
+
+
+
+        <!-- ======= Schedule Section ======= -->
+        <section id="schedule" class="section-with-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Event Schedule</h2>
+                    <p>Here is our event schedule</p>
+                </div>
+
+                <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Day 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Day 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Day 3</a>
+                    </li>
+                </ul>
+
+                
+
+                <div class="tab-content row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+
+                    <!-- Schdule Day 1 -->
+                    <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>9.30am - 12.45pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="sp.jpeg" alt="Brenden Legros">
+                                </div>
+                                <h4>Guided Project <span>MERN Stack</span></h4>
+                                <p>Guided Project will help participants learn a job relevant skill just in few hours</p>
+                            </div>
+                        </div>
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>2:00pm - 5:00pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="tr.jpeg" alt="Hubert Hirthe">
+                                </div>
+                                <h4>Technical Rush </h4>
+                                <p>The tasks will be related to basic technical topics pertaining to Computer/IT domain</p>
+                            </div>
+                        </div>
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>5:00pm - 9:00am</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="debug.png" alt="Cole Emmerich">
+                                </div>
+                                <h4>Debug the Code </h4>
+                                <p>The Coding Contest is based on C/C++ Programming.</p>
+                            </div>
+                        </div>
+
+                        
+                     </div>
+                        
+                    <!-- End Schdule Day 1 -->
+
+                    <!-- Schdule Day 2 -->
+                    <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>9:30am - 12:45pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="sp.jpeg" alt="Jack Christiansen">
+                                </div>
+                                <h4>Guided Project  </h4>
+                                <p>Guided Project will help participants learn a job relevant skill just in few hours</p>
+                            </div>
+                        </div>
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>1:00pm - 3:00pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="who.jpeg" alt="Brenden Legros">
+                                </div>
+                                <h4>Whodunit 2.0 </h4>
+                                <p>Whodunit is a team-based event in which participants will need to Attempt the quiz containing few rounds.</p>
+                            </div>
+                        </div>
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>4:00pm - 6:00pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="coding.png" alt="Hubert Hirthe">
+                                </div>
+                                <h4>Coding Maniacs </h4>
+                                <p>Coding Maniacs is the perfect pace-based competition to improve your coding skills.</p>
+                            </div>
+                        </div>
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>6:00pm - 8:00pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="cod.jpeg" alt="Cole Emmerich">
+                                </div>
+                                <h4>COD Mobile </h4>
+                                <p>With multiplayer, 5v5 team deathmatches are at the smack dab centre of the gameplay.</p>
+                            </div>
+                        </div>
+
+                        
+
+                       </div> 
+                    <!-- End Schdule Day 2 -->
+
+                    <!-- Schdule Day 3 -->
+                    <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+                        
+                            <div class="row schedule-item">
+                                <div class="col-md-2"><time>9:30am - 12:45pm</time></div>
+                                <div class="col-md-10">
+                                    <div class="speaker">
+                                        <img src="sp.jpeg" alt="Jack Christiansen">
+                                    </div>
+                                    <h4>Guided Project  </h4>
+                                    <p>Guided Project will help participants learn a job relevant skill just in few hours</p>
+                                </div>
+                            </div>
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>1:00 pm - 3:00pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="who.jpeg" alt="Hubert Hirthe">
+                                </div>
+                                <h4>Whodunit 2.0 </h4>
+                                <p>Whodunit is a team-based event in which participants will need to Attempt the quiz containing few rounds.</p>
+                            </div>
+                        </div>
+
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>4:00pm - 5:30pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="stu.png" alt="Cole Emmerich">
+                                </div>
+                                <h4>Stumble Guys </h4>
+                                <p>Stumble Guys is a massively multiplayer party knockout game with up to 32 players online.</p>
+                            </div>
+                        </div>
+                        <div class="row schedule-item">
+                            <div class="col-md-2"><time>6:00pm - 8:00pm</time></div>
+                            <div class="col-md-10">
+                                <div class="speaker">
+                                    <img src="cod.jpeg" alt="Cole Emmerich">
+                                </div>
+                                <h4>COD Mobile </h4>
+                                <p>With multiplayer, 5v5 team deathmatches are at the smack dab centre of the gameplay.</p>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <!-- End Schdule Day 2 -->
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- End Schedule Section -->
+
+        <!-- ======= Venue Section ======= -->
+        
+        <!-- End Venue Section -->
+
+        <!-- ======= Hotels Section ======= -->
+        
+        <!-- End Hotels Section -->
+
+        <!-- ======= Gallery Section ======= -->
+        <section id="gallery">
+
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Gallery</h2>
+                    <p>Check our gallery from the recent events</p>
+                </div>
+            </div>
+
+            <div class="gallery-slider swiper">
+                <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.39.34 PM.jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.39.34 PM.jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.39.35 PM (1).jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.39.35 PM (1).jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.39.35 PM (2).jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.39.35 PM (2).jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.40.24 PM.jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.40.24 PM.jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.40.24 PM (1).jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.40.24 PM (1).jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.40.23 PM.jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.40.23 PM.jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.40.23 PM (1).jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.40.23 PM (1).jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="WhatsApp Image 2021-09-24 at 10.40.22 PM (1).jpeg" class="gallery-lightbox"><img src="WhatsApp Image 2021-09-24 at 10.40.22 PM (1).jpeg" class="img-fluid" alt=""></a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </section>
+        <!-- End Gallery Section -->
+
+        <!-- ======= Supporters Section ======= 
+        <section id="supporters" class="section-with-bg">
+
+            <div class="container" data-aos="fade-up">
+                <div class="section-header">
+                    <h2>Sponsors</h2>
+                </div>
+
+                <div class="row no-gutters supporters-wrap clearfix" data-aos="zoom-in" data-aos-delay="100">
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/1.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/2.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/3.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/4.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/5.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/6.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/7.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-xs-6">
+                        <div class="supporter-logo">
+                            <img src="assets/img/supporters/8.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>-->
+        <!-- End Sponsors Section -->
+
+        <!-- =======  F.A.Q Section ======= -->
+        
+        <!-- End  F.A.Q Section -->
+
+        <!-- ======= Subscribe Section ======= -->
+        <section id="subscribe" style="background-image: url('cb.jpeg">
+            <div class="container" data-aos="zoom-in">
+                <div class="section-header">
+                    <
+
+            </div>
+        </section>
+        <!-- End Subscribe Section -->
+
+        <!-- ======= Buy Ticket Section ======= -->
+       
+        <!-- End Buy Ticket Section -->
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="section-bg">
+
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header">
+                    <h2>Contact Us</h2>
+                    
+                </div>
+
+                <div class="row contact-info">
+
+                    <div class="col-md-4">
+                        <div class="contact-address">
+                            
+                            <img src="https://img.icons8.com/color/48/000000/user.png"/>
+                            <br>
+                            <br>
+                            <h3>Name</h3>
+                            <address>Jeevesh Singale</address>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-phone">
+                            <i class="bi bi-phone"></i>
+                            <h3>Phone Number</h3>
+                            <p>+91 7387320341</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-email">
+                            <i class="bi bi-envelope"></i>
+                            <h3>Email</h3>
+                            <p>jeeveshkumar039@gmail.com</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <center><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc6KJVq4JOPN9eNxvdmyQHX8joiU4DYr4Ex6O9FIfdJXTakeA/viewform?embedded=true" width="640" height="812" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></center>
+            </div>
+        </section>
+        <!-- End Contact Section -->
+
+    </main>
+    <!-- End #main -->
+    
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12 footer-info" >
+                        <h1 style="color:rgb(172, 37, 66); font-family:'Times New Roman', Times, serif">ZEPHYR 2021</h1>
+                        <p>Ever since it was first organized in 2004, Zephyr has been the most awaited event among the students of Thakur College of Engineering and Technology. This technical festival aims at providing students with platform to enhance their technical skills. Each year with a new edition, Zephyr brings new events such as workshops on in-demand technology and skills along with gaming tournaments and fun events. This 3-day fest has been recoding and increasing footfall of Students, Teachers and Public in general. Join in Zephyr 2021 to get a glimpse of the best of TCET.</p>
+                    </div>
+
+                    
+
+                    
+<center>
+                        <div class="social-links" style="align-items: center;">
+                            
+                            <a href="https://www.instagram.com/acmtcet/" target="blank" class="instagram"  ><i class="bi bi-instagram" ></i></a>
+                            
+                            <a href="https://www.linkedin.com/in/acmtcet/" target="blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </center>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        
+    </footer>
+    <!-- End  Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
